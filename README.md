@@ -4,11 +4,13 @@
 ***
 This python script was created to control costs. There are some flags using in this script:
 
-`--supply n` - supply score
+`--supply n` or `-s n` - supply score
 
-`--history [n]` - show history of last n purchases
+`--history [n]` or `-h [n]` - show history of last n purchases
 
-`--discard n message` - set purchase (point how much money was spent and for what)
+`--discard n message` or `-d n message` - set purchase (point how much money was spent and for what)
+
+`--balance` or `-b` - show general balance
 
 For example:
 

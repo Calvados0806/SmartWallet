@@ -1,14 +1,16 @@
 "this module contains configure settings for database"
 
-DB_NAME = #point database name
-USER = #point your user name
-HOST = #point host of database
-PASSWORD = #point password to your database
+import os
+
+DB_NAME = "SmartWallet"
+USER = "root"
+HOST = "127.0.0.1"
+PASSWORD = os.environ["PASSWORD"]
 
 TABLES = dict()
 TABLES["cash"] = (
 	"CREATE TABLE `cash` ("
-	"  `general` INT NOT NULL DEFAULT 0"
+	"  `balance` INT NOT NULL DEFAULT 0"
 	") ENGINE=InnoDB"
 )
 TABLES["history"] = (
