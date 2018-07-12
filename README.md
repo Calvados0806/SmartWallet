@@ -6,7 +6,7 @@ This python script was created to control costs. There are some flags using in t
 
 `--supply n` or `-s n` - supply score
 
-`--history [n]` or `-h [n]` - show history of last n purchases
+`--history [n]` or `-H [n]` - show history of last n purchases
 
 `--discard n message` or `-d n message` - set purchase (point how much money was spent and for what)
 

@@ -50,14 +50,15 @@ def get_history(cursor, n=None):
 	)
 	result = list(cursor)
 	if n and n < len(result):
-		return result[-n:]
-	return result
+		return result[-n:].reverse()
+	return result.reverse()
 
 def discard(cursor, n, message):
 	"inserts values in table history"
 	cursor.execute(
 		"INSERT INTO history VALUES (NULL, %(n)s, %(message)s)", {"n": n, "message": message}
 	)
+	supply(cursor, -n)
 	conn.commit()
 
 try:
