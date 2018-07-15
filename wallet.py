@@ -27,11 +27,16 @@ def main():
 		res = db.get_history(db.cursor, args.history)
 		if res:
 			for i in res:
-				print("{1} - {2} := {3}".format(*i))
+				print("{1} := {2}".format(*i))
 		else:
 			print("There is no info yet")
 	elif args.discard:
-		db.discard(db.cursor, *args.discard)
+		try:
+			n = int(args.discard[0])
+		except ValueError:
+			print("N is not a number")
+			exit(1)
+		db.discard(db.cursor, n, args.discard[1])
 		print("Successful discarding!")
 	else:
 		print("Print `--help` or `-h` to find out arguments")

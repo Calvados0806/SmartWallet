@@ -49,9 +49,11 @@ def get_history(cursor, n=None):
 		"SELECT * FROM history"
 	)
 	result = list(cursor)
+	if len(result) != 1:
+		result.reverse()
 	if n and n < len(result):
-		return result[-n:].reverse()
-	return result.reverse()
+		return result[:n]
+	return result
 
 def discard(cursor, n, message):
 	"inserts values in table history"
